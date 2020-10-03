@@ -1,0 +1,23 @@
+# Exercise 6.3
+
+def first(word):
+	return word[0]
+
+def last(word):
+	return word[-1]
+
+def middle(word):
+	return word[1:-1]
+
+
+# second attempt, using recursion
+def is_palindrome(s):
+    if len(s) >= 2:
+        if first(s) == last(s):
+            return is_palindrome(middle(s))
+        else:
+            return False
+    return True
+
+input_string = input("Enter a string to check if it is a palindrome: ")
+print("Result: " + str(is_palindrome(input_string)))
